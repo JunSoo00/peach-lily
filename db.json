@@ -1,0 +1,76 @@
+{
+    "items" : [
+        {
+            "id" : 1,
+            "title" : "시트러스 허니 수분광 크림",
+            "desc" : "상큼한 시트러스와 달콤한 허니가 만나 하루 종일 촉촉하게 빛나는 피부를 선사하는 수분광 크림입니다. 끈적임 없이 부드럽게 스며들어 피부 본연의 윤기와 탄력을 케어합니다.",
+            "image" : "/asset/img_item_01.jpg",
+            "price" : 18000,
+            "hoverImg" : "/asset/img_item_01_hover.jpg",
+            "stars" : "5"
+        },
+        {
+            "id" : 2,
+            "title" : "매끄럼 케어 인그로운 헤어 트리트먼트",
+            "desc" : "면도나 제모 후 생기는 붉은 트러블과 인그로운 헤어를 집중 케어. 피부결을 매끄럽게 정돈하고, 진정 성분이 붉은 기를 완화해 건강한 피부로 가꿔줍니다.",
+            "image" : "/asset/img_item_02.jpg",
+            "price" : 27000,
+            "hoverImg" : "/asset/img_item_02_hover.jpg",
+            "stars" : "5"
+        },
+        {
+            "id" : 3,
+            "title" : "투명광 피부 체험 키트",
+            "desc" : "투명하고 매끄러운 ‘글래스 스킨’을 경험할 수 있는 필수 아이템 세트. 수분, 광채, 피부 결 케어를 한 번에 체험하며 매일 아침 빛나는 피부를 완성하세요.",
+            "image" : "/asset/img_item_03.jpg",
+            "price" : 58000,
+            "hoverImg" : "/asset/img_item_03_hover.jpg",
+            "stars" : "5"
+        },
+        {
+            "id" : 4,
+            "title" : "펩타이드 프로 탄력 크림",
+            "desc" : "강력한 펩타이드 성분으로 피부 탄력을 채워주는 프로페셔널 크림. 하루 종일 촉촉함을 유지하며, 피부를 탄탄하게 잡아주는 맞춤 케어를 제공합니다.",
+            "image" : "/asset/img_item_04.jpg",
+            "price" : 67000,
+            "hoverImg" : "/asset/img_item_04_hover.jpg",
+            "stars" : "5"
+        },
+        {
+            "id" : 5,
+            "title" : "피치앤릴리 투명광 보습 미스트",
+            "desc" : "가볍게 뿌리는 순간 피부 위에 은은한 수분 베일이 형성되어 촉촉한 광채를 부여합니다. 메이크업 위에서도 사용 가능하며, 하루 종일 상큼하게 피부를 리프레시.",
+            "image" : "/asset/img_item_05.jpg",
+            "price" : 46000,
+            "hoverImg" : "/asset/img_item_05_hover.jpg",
+            "stars" : "5"
+        },
+        {
+            "id" : 6,
+            "title" : "피지 &midddot 트러블 집중 마이크로 패치",
+            "desc" : "작은 마이크로 다트가 트러블 부위에 집중 침투, 피지와 염증을 케어합니다. 하루 밤만으로도 붉은 기와 불순물 완화 효과를 느낄 수 있습니다.",
+            "image" : "/asset/img_item_06.jpg",
+            "price" : 14000,
+            "hoverImg" : "/asset/img_item_06_hover.jpg",
+            "stars" : "5"
+        },
+        {
+            "id" : 7,
+            "title" : "트러블 진정 달팽이 토너",
+            "desc" : "달팽이 점액 추출물이 자극받은 피부를 진정시키고, 트러블 흔적을 케어합니다. 산뜻한 텍스처로 피부결을 정리하며, 다음 단계 스킨케어 흡수를 돕습니다",
+            "image" : "/asset/img_item_07.jpg",
+            "price" : 25000,
+            "hoverImg" : "/asset/img_item_07_hover.jpg",
+            "stars" : "5"
+        },
+        {
+            "id" : 8,
+            "title" : "별빛 오버나이트 크림",
+            "desc" : "밤사이 피부를 집중 케어하는 오버나이트 크림. 부드럽게 스며들어 피부 속 깊숙이 영양을 공급하고, 아침이면 별빛처럼 맑고 윤기 나는 피부를 완성합니다.",
+            "image" : "/asset/img_item_08.jpg",
+            "price" : 67000,
+            "hoverImg" : "/asset/img_item_08_hover.jpg",
+            "stars" : "5"
+        }
+    ]
+}
