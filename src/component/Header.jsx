@@ -3,23 +3,23 @@ import '../App.css'
 
 
 const Header = () => {
-
     const root = useRef(null);
+    
     useEffect(() => {
         const el = root.current;
         const gnb = [...el.querySelectorAll('.gnb > li')];
         const panels = {
-            0 : el.querySelector('.shopAll'),
-            1 : el.querySelector('.concerns'),
-            2 : el.querySelector('.bestsellers'),
-            3 : el.querySelector('.peachlily'),
-            4 : el.querySelector('.peachSlice')
+            0: el.querySelector('.shopAll'),
+            1: el.querySelector('.concerns'),
+            2: el.querySelector('.bestsellers'),
+            3: el.querySelector('.peachlily'),
+            4: el.querySelector('.peachSlice')
         };
 
-        const hideAll = ( ) => el.querySelectorAll('.gnbMenu.on').forEach(p => p.classList.remove('on'));
+        const hideAll = () => el.querySelectorAll('.gnbMenu.on').forEach(p => p.classList.remove('on'));
 
         const handlers = gnb.map((li, i) => {
-            const fn = () => {hideAll(); panels[i]?.classList.add('on');};
+            const fn = () => { hideAll(); panels[i]?.classList.add('on'); };
             li.addEventListener('mouseenter', fn);
             return () => li.removeEventListener('mouseenter', fn);
         });
@@ -27,7 +27,7 @@ const Header = () => {
         const leave = () => hideAll();
         el.addEventListener('mouseleave', leave);
 
-        return() => {handlers.forEach(off => off()); el.removeEventListener('mouseleave', leave)};
+        return () => { handlers.forEach(off => off()); el.removeEventListener('mouseleave', leave) };
     })
 
     return (
@@ -64,11 +64,13 @@ const Header = () => {
                 <li>
                     <ul className="nav">
                         <li><a href=""><img src={process.env.PUBLIC_URL + "/asset/ico/ico_mypage.png"}
- alt="마이페이지" /></a></li>
+                            alt="마이페이지" /></a></li>
                         <li><a href=""><img src={process.env.PUBLIC_URL + "/asset/ico/ico_search.png"}
- alt="찾아보기" /></a></li>
+                            alt="찾아보기" /></a></li>
                         <li><a href=""><img src={process.env.PUBLIC_URL + "/asset/ico/ico_cart.png"}
- alt="장바구니" /></a></li>
+                            alt="장바구니" /></a></li>
+                        <li><a href=""><img src={process.env.PUBLIC_URL + "/asset/ico/ico_mbtn.png"}
+                            alt="모바일버튼" className='mbtn' /></a></li>
                     </ul>
                 </li>
             </ul>
@@ -121,7 +123,7 @@ const Header = () => {
                 </li>
                 <li className="right">
                     <img src={process.env.PUBLIC_URL + "/asset/img_header_shopall.jpg"}
- alt="" />
+                        alt="" />
                     <p>쇼핑 바로가기</p>
                 </li>
             </ul>
@@ -161,9 +163,9 @@ const Header = () => {
                 </li>
                 <li className="right">
                     <div><img src={process.env.PUBLIC_URL + "/asset/img_header_concerns01.jpg"}
- alt="" /></div>
+                        alt="" /></div>
                     <div><img src={process.env.PUBLIC_URL + "/asset/img_header_concerns02.jpg"}
- alt="" /></div>
+                        alt="" /></div>
                 </li>
             </ul>
             <ul className="gnbMenu bestsellers">
@@ -195,12 +197,12 @@ const Header = () => {
                 <li className="right">
                     <div>
                         <img src={process.env.PUBLIC_URL + "/asset/img_header_best01.jpg"}
- alt="" />
+                            alt="" />
                         <p>맑고 투명한 피부</p>
                     </div>
                     <div>
                         <img src={process.env.PUBLIC_URL + "/asset/img_header_best02.jpg"}
- alt="" />
+                            alt="" />
                         <p>거친 피부 작별</p>
                     </div>
                 </li>
@@ -238,12 +240,12 @@ const Header = () => {
                 <li className="right">
                     <div>
                         <img src={process.env.PUBLIC_URL + "/asset/img_header_peach01.jpg"}
- alt="" />
+                            alt="" />
                         <p>신제품 쇼핑하기</p>
                     </div>
                     <div>
                         <img src={process.env.PUBLIC_URL + "/asset/img_header_peach02.jpg"}
- alt="" />
+                            alt="" />
                         <p>모든 제품 보기</p>
                     </div>
                 </li>
@@ -284,12 +286,12 @@ const Header = () => {
                 <li className="right">
                     <div>
                         <img src={process.env.PUBLIC_URL + "/asset/img_header_slice01.jpg"}
- alt="" />
+                            alt="" />
                         <p>전체상품 보기</p>
                     </div>
                     <div>
                         <img src={process.env.PUBLIC_URL + "/asset/img_header_slice02.jpg"}
- alt="" />
+                            alt="" />
                         <p>신제품 보기</p>
                     </div>
                 </li>
