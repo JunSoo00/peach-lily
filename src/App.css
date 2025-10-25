@@ -59,7 +59,7 @@ header .header .gnb{
 }
 header .header .gnb li{
   cursor: pointer;
-  font-size: 1.2vw;
+  font-size: 1.1vw;
   line-height: 1.4;
 }
 header .header .gnb li:nth-child(2), header .header .gnb li:nth-child(3){
@@ -73,18 +73,29 @@ header .header .gnb li:hover{
 header .header .gnb li:first-child:hover, header .header .gnb li:nth-child(4):hover, header .header .gnb li:nth-child(5):hover {
   border-bottom: 1px solid var(--brand);
 }
+header .header .gnb li .Mgnb{
+  display: none;
+}
 header .header > li:last-child{
-  margin-left: auto; /* 마지막 li만 왼쪽정렬 되도록 */
+  margin-left: auto; /* 마지막 li(nav)만 왼쪽정렬 되도록 */
 }
 header .header .nav{
   display: flex;
-  gap: 20px;
 }
 header .header .nav li{
-  width: 10%;
+  width: max-content;
+  margin-right: 0.7vw;
+}
+header .header .nav li a img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 .mbtn{
   display: none;
+  position: absolute;
+  top: 0;
 }
 
 /* gnbMenu area */
@@ -92,7 +103,7 @@ header .header .nav li{
   width: 100%;
   padding: 30px 45px;
   display: flex;
-  gap: 80px;
+  gap: 7vw;
   border-top: 1px solid #dbdbdb;
   background: #fff;
 }
@@ -116,7 +127,7 @@ header .header .nav li{
 }
 .gnbMenu .middle{
   display: flex;
-  gap: 80px;
+  gap: 6vw;
 }
 .gnbMenu .middle .title{
   display: block;
@@ -124,7 +135,13 @@ header .header .nav li{
 .gnbMenu .middle .list{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px 50px;
+  gap: 1vw 1vw;
+  font-size: 1vw;
+}
+.gnbMenu .middle .list li a{
+  white-space: nowrap ;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .gnbMenu .right{
   display: flex;
@@ -255,12 +272,12 @@ header .header .nav li{
   margin: 10px 0;
   white-space: nowrap;
   overflow: hidden;
-    text-overflow: ellipsis;
+  text-overflow: ellipsis;
 }
 .ItemCard .cardText p{
   white-space: nowrap;
   overflow: hidden;
-    text-overflow: ellipsis;
+  text-overflow: ellipsis;
   font-weight: 300;
 }
 .ItemCard .cardText span{
@@ -356,7 +373,8 @@ header .header .nav li{
 
 /* footer */
 .footer{
-  height: 85vh;
+  height: auto;
+  min-height: 80vh;
   background: var(--brand);
   padding-top: 40px;
 }
@@ -367,8 +385,10 @@ header .header .nav li{
   position: relative;
 }
 .footer_logo{
-  font-size: 4vw;
-  margin-bottom: 40px;
+  background: url(/public/asset/ico/ico_footerLogo.svg) no-repeat center/contain;
+  width: 35%;
+  aspect-ratio: 1 / 0.2;
+  margin-bottom: 2%;
 }
 .footer_event {
   width: 30%;
@@ -376,15 +396,15 @@ header .header .nav li{
 .footer_event span{
   display: block;
   font-size: 24px;
-  margin-bottom: 15px;
+  margin-bottom: 2%;
 }
 .footer_event p{
-  margin-bottom: 10px;
+  margin-bottom: 1%;
   font-weight: 300;
   line-height: 1.5;
 }
 .footer_event .firstOrder{
-  margin-bottom: 50px;
+  margin-bottom: 15%;
 }
 .footer_event .firstOrder .email{
   all: unset;
@@ -426,9 +446,9 @@ header .header .nav li{
 .footer_event .subscribe button{
   background: transparent;
   padding: 5px 0;
-  font-size: 16px;
+  font-size: 1.3vw;
   border-bottom: 1px solid #000;
-  margin-bottom: 30px;
+  margin-bottom: 15%;
 }
 .footer .footer_gnb{
   width: 50%;
@@ -443,10 +463,11 @@ header .header .nav li{
   flex-direction: column;
 }
 .footer .footer_gnb li .title{
-  margin-bottom: 40px;
+  margin-bottom: 5vh;
   font-weight: 800;
 }
-.footer .footer_gnb li a{
+.footer .footer_gnb li .footer_gnb_menu a{
+  display: block;
   margin-bottom: 20px;
   font-weight: 300;
 }
@@ -495,15 +516,39 @@ header .header .nav li{
  
  @media (max-width:1023px) {
   /* header area */
+  header .event{
+    padding: 20px 1.5vw;
+  }
   header .event .eventMenu{
     display: none;
+  }
+  header .header{
+    padding: 20px 1.5vw;
   }
   header .header .gnb{
     display: none;
   }
   .mbtn{
     display: flex;
+    position: static;
   }
+  /* Mgnb */
+  .Mgnb{
+    width: 60%;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #fff;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+    z-index: 2000;
+  }
+  .Mgnb.on{
+    transform: translateX(0);
+  }
+
+  
   /* Itemlist area */
   .ItemListSection{
     height: 60vw;
@@ -526,5 +571,80 @@ header .header .nav li{
   }
   .goto_text h3{
     font-size: 2vw;
+  }
+
+  /* footer */
+  .footer .content{
+    width: 95%;
+  }
+  .footer_logo{
+    width: 100%;
+    aspect-ratio: 1 / 0.15;
+    margin-bottom: 5%;
+  }
+  .footer_event{
+    width: 100%;
+  }
+  .footer_event span{
+    font-size: 3vw;
+  }
+  .footer_event .firstOrder{
+    margin-bottom: 5%;
+  }
+  .footer_event .subscribe button{
+    margin-bottom: 5%;
+  }
+  .footer .footer_gnb{
+    position: static;
+    width: 100%;
+    border-top: 1px solid #000;
+    padding-top: 2%;
+    display: block;
+  }
+  .footer .footer_gnb li{
+    display: block;
+    }
+  .footer .footer_gnb li:not(:first-child){
+    border-top: 1px solid #000;
+    padding-top: 2%;
+  }
+  .footer .footer_gnb li span{
+    display: block;
+  }
+  .footer .footer_gnb li span{
+    position: relative;
+  }
+  .footer .footer_gnb li span::after{
+    content: '';
+    width: 24px;
+    height: 24px;
+    background: url(/public/asset/ico/ico_arrowDown.png) no-repeat center/cover;
+    position: absolute;
+    top: 0; right: 0;
+  }
+  .footer .footer_gnb li .footer_gnb_menu{
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s ease;
+  }
+  .footer .footer_gnb li .footer_gnb_menu.on{
+    height: 5%;
+  }
+  .footer .footer_gnb li .footer_gnb_menu a{
+    display: block;
+  }
+  .footer .footer_under{
+    flex-direction: column-reverse;
+    gap: 3vw;
+  }
+  .footer .footer_under .under_left{
+    width: 100%;
+    display: inline-block;
+  }
+  .footer .footer_under .under_left a{
+    margin-right: 3vw;
+  }
+  .under_mid{
+    order: -1; /* 저작권 맨 밑으로(순서바꾸기) */
   }
  }

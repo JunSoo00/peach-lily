@@ -1,12 +1,15 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useState,useEffect, useRef } from 'react'
+import MobileGnb from './MobileGnb';
 import '../App.css'
 
 
 const Header = () => {
+    const [MGOpen, setMGOpen] = useState(false); /* 모바일gnb 상태설정 */
     const root = useRef(null);
-    
+
     useEffect(() => {
         const el = root.current;
+        if (window.innerWidth <= 1023) return;
         const gnb = [...el.querySelectorAll('.gnb > li')];
         const panels = {
             0: el.querySelector('.shopAll'),
@@ -28,9 +31,18 @@ const Header = () => {
         el.addEventListener('mouseleave', leave);
 
         return () => { handlers.forEach(off => off()); el.removeEventListener('mouseleave', leave) };
+
     })
 
+    /* 모바일 버튼 설정 */
+    const togglegnb = (e) => {
+            e.preventDefault();
+            if (window.innerWidth > 1023) return;
+            setMGOpen(prev => !prev)
+        }
+
     return (
+        <>
         <header ref={root}>
             <div className="event">
                 <p>7만원 이상 주문 시 무료배송 + 무료 샘플 2개</p>
@@ -52,29 +64,41 @@ const Header = () => {
                 <li className='logo'><img src={process.env.PUBLIC_URL + "/asset/ico/ico_headerLogo.svg"} alt="로고" /></li>
                 <li>
                     <ul className="gnb">
-                        <li>전체 상품</li>
-                        <li>피부 고민별</li>
+                        <li>전체상품</li>
+                        <li>피부고민별</li>
                         <li>베스트셀러</li>
                         <li>카테고리별</li>
-                        <li>시그니처 라인</li>
+                        <li>시그니쳐 라인</li>
                         <li>뷰티 스토리</li>
                         <li>피부진단 테스트</li>
                     </ul>
                 </li>
                 <li>
                     <ul className="nav">
-                        <li><a href=""><img src={process.env.PUBLIC_URL + "/asset/ico/ico_mypage.png"}
-                            alt="마이페이지" /></a></li>
-                        <li><a href=""><img src={process.env.PUBLIC_URL + "/asset/ico/ico_search.png"}
-                            alt="찾아보기" /></a></li>
-                        <li><a href=""><img src={process.env.PUBLIC_URL + "/asset/ico/ico_cart.png"}
-                            alt="장바구니" /></a></li>
-                        <li><a href=""><img src={process.env.PUBLIC_URL + "/asset/ico/ico_mbtn.png"}
-                            alt="모바일버튼" className='mbtn' /></a></li>
+                        <li>
+                            <a href="">
+                                <img src={process.env.PUBLIC_URL + "/asset/ico/ico_mypage.png"} alt="마이페이지" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src={process.env.PUBLIC_URL + "/asset/ico/ico_search.png"} alt="찾아보기" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src={process.env.PUBLIC_URL + "/asset/ico/ico_cart.png"} alt="장바구니" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src={process.env.PUBLIC_URL + "/asset/ico/ico_mbtn.png"} alt="모바일버튼" className='mbtn' onClick={togglegnb}/>
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>
-            <ul className="gnbMenu on shopAll">
+            <ul className="gnbMenu shopAll">
                 <li className='left'>
                     <a href="#" className='title'>전체 상품</a>
                     <a href="#" className='title'>인기 제품</a>
@@ -297,6 +321,9 @@ const Header = () => {
                 </li>
             </ul>
         </header>
+
+        {MGOpen && <MobileGnb onClose={() => setMGOpen(false)}/>}
+        </>
     )
 }
 

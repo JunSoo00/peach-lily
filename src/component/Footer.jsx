@@ -1,10 +1,15 @@
 import React from 'react'
 
 const Footer = () => {
+  const toggleMenu = (e) => {
+    if(window.innerWidth > 1023) return
+    const submenu = e.currentTarget.nextElementSibling
+    if (submenu) submenu.classList.toggle('on')
+  }
   return (
     <div className='footer'>
       <div className="content">
-        <div className="footer_logo">PEACH & LILY</div>
+        <div className="footer_logo"><span className="blind">PEACH & LILY</span></div>
         <div className="footer_event">
           <div className="firstOrder">
             <span>첫 주문시 15%할인</span>
@@ -22,25 +27,31 @@ const Footer = () => {
         </div>
         <ul className="footer_gnb">
           <li>
-            <span className="title">제품</span>
-            <a href="">베스트셀러</a>
-            <a href="">유리광 컬렉션</a>
-            <a href="">구독 서비스</a>
-            <a href="">기프트 카드</a>
+            <span className="title" onClick={toggleMenu}>제품</span>
+            <div className="footer_gnb_menu">
+              <a href="">베스트셀러</a>
+              <a href="">유리광 컬렉션</a>
+              <a href="">구독 서비스</a>
+              <a href="">기프트 카드</a>
+            </div>
           </li>
           <li>
-            <span className="title">고객지원</span>
-            <a href="">내 계정</a>
-            <a href="">내 피부 타입 찾기</a>
-            <a href="">자주 묻는 질문</a>
-            <a href="">사이트 맵</a>
+            <span className="title"onClick={toggleMenu}>고객지원</span>
+            <div className="footer_gnb_menu">
+              <a href="">내 계정</a>
+              <a href="">내 피부 타입 찾기</a>
+              <a href="">자주 묻는 질문</a>
+              <a href="">사이트 맵</a>
+            </div>
           </li>
           <li>
-            <span className="title">브랜드</span>
-            <a href="">브랜드 소개</a>
-            <a href="">블로그</a>
-            <a href="">친구 추천</a>
-            <a href="">피치 리워드 / 회원 혜택 프로그램</a>
+            <span className="title" onClick={toggleMenu}>브랜드</span>
+            <div className="footer_gnb_menu">
+              <a href="">브랜드 소개</a>
+              <a href="">블로그</a>
+              <a href="">친구 추천</a>
+              <a href="">피치 리워드 / 회원 혜택 프로그램</a>
+            </div>
           </li>
         </ul>
         <div className="footer_under">
