@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/peach-lily/static/css/main.afd28a52.css",
-    "main.js": "/peach-lily/static/js/main.ed41a25d.js",
+    "main.css": "/peach-lily/static/css/main.3bf327e3.css",
+    "main.js": "/peach-lily/static/js/main.896ec560.js",
     "static/js/453.54e926d7.chunk.js": "/peach-lily/static/js/453.54e926d7.chunk.js",
     "static/media/img_mainImg.jpg": "/peach-lily/static/media/img_mainImg.2f848052693c89344a65.jpg",
     "static/media/img_goto_peachSlice.jpg": "/peach-lily/static/media/img_goto_peachSlice.c95f68fb038563db1107.jpg",
@@ -12,12 +12,12 @@
     "static/media/ico_tic.png": "/peach-lily/static/media/ico_tic.8bb71cc6c1bd4e58530b.png",
     "static/media/ico_footerLogo.svg": "/peach-lily/static/media/ico_footerLogo.05273c5f48e7f6632a52.svg",
     "index.html": "/peach-lily/index.html",
-    "main.afd28a52.css.map": "/peach-lily/static/css/main.afd28a52.css.map",
-    "main.ed41a25d.js.map": "/peach-lily/static/js/main.ed41a25d.js.map",
+    "main.3bf327e3.css.map": "/peach-lily/static/css/main.3bf327e3.css.map",
+    "main.896ec560.js.map": "/peach-lily/static/js/main.896ec560.js.map",
     "453.54e926d7.chunk.js.map": "/peach-lily/static/js/453.54e926d7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.afd28a52.css",
-    "static/js/main.ed41a25d.js"
+    "static/css/main.3bf327e3.css",
+    "static/js/main.896ec560.js"
   ]
 }
