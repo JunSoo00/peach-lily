@@ -39,6 +39,7 @@ const Header = () => {
             e.preventDefault();
             if (window.innerWidth > 1023) return;
             setMGOpen(prev => !prev)
+            /* prev : 이전값 / 이전값을 반대값으로 바꾸는 역할 */
         }
 
     return (
@@ -323,6 +324,10 @@ const Header = () => {
         </header>
 
         {MGOpen && <MobileGnb onClose={() => setMGOpen(false)}/>}
+        {/* 
+            1. MGOpen이 ture이면 MobileGnb가 열린다.
+            2. MGOpen에 onClose함수를 넘겨줘서 닫기 버튼을 누르면 setMGOpen이 false가 되도록 해준다.
+         */}
         </>
     )
 }
