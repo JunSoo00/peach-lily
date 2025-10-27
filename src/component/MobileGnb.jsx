@@ -13,6 +13,13 @@ const MobileGnb = ({onClose}) => {
         setTimeout(onClose, 500);
     }
 
+    /* 모바일 gnb 메뉴 아코디언 */
+    const MgnbMenu = (e) =>{
+        if (window.innerWidth > 1023) return
+        const MMenu = e.currentTarget.nextElementSibling
+        if (MMenu) MMenu.classList.toggle('on')
+    }
+
     return (
         <div className={`gnbWrap ${isOn ? 'on' : ''}`}>
             <div className="Mgnb">
@@ -20,7 +27,7 @@ const MobileGnb = ({onClose}) => {
                 <ul>
                     <li className='Mlogo'><img src={process.env.PUBLIC_URL + "/asset/ico/ico_headerLogo.svg"} alt="로고" /></li>
                     <li>
-                        <span>전체상품</span>
+                        <span onClick={MgnbMenu}>전체상품</span>
                         <div className='M_gnb_menu'>
                             <a href="#">전체상품</a>
                             <a href="#">베스트셀러</a>
@@ -29,14 +36,14 @@ const MobileGnb = ({onClose}) => {
                         </div>
                     </li>
                     <li>
-                        <span>피부고민별</span>
+                        <span onClick={MgnbMenu}>피부고민별</span>
                         <div className='M_gnb_menu'>
                             <a href="#">전체상품</a>
                             <a href="#">카테고리별</a>
                         </div>
                     </li>
                     <li>
-                        <span>베스트셀러</span>
+                        <span onClick={MgnbMenu}>베스트셀러</span>
                         <div className='M_gnb_menu'>
                             <a href="#">베스트셀러 전체보기</a>
                             <a href="#">카테고리별</a>
@@ -44,7 +51,7 @@ const MobileGnb = ({onClose}) => {
                         </div>
                     </li>
                     <li>
-                        <span>카테고리별</span>
+                        <span onClick={MgnbMenu}>카테고리별</span>
                         <div className='M_gnb_menu'>
                             <a href="#">신상품</a>
                             <a href="#">전체상품</a>
@@ -53,7 +60,7 @@ const MobileGnb = ({onClose}) => {
                         </div>
                     </li>
                     <li>
-                        <span>시그니쳐 라인</span>
+                        <span onClick={MgnbMenu}>시그니쳐 라인</span>
                         <div className='M_gnb_menu'>
                             <a href="#">신상품</a>
                             <a href="#">전체상품</a>

@@ -42,7 +42,7 @@ const ItemListSection = () => {
         className="ItemList mySwiper"
         breakpoints={{
           0: { slidesPerView: 1 },
-          940: { slidesPerView: 3 },
+          768: { slidesPerView: 3 },
           1024: { slidesPerView: 4.2},
         }}
       >

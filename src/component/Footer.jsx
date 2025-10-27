@@ -36,7 +36,7 @@ const Footer = () => {
             </div>
           </li>
           <li>
-            <span className="title"onClick={toggleMenu}>고객지원</span>
+            <span className="title" onClick={toggleMenu}>고객지원</span>
             <div className="footer_gnb_menu">
               <a href="">내 계정</a>
               <a href="">내 피부 타입 찾기</a>
